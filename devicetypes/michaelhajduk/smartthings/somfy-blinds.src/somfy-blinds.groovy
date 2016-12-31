@@ -32,7 +32,7 @@ metadata {
             state "default", action:"down", label: "down", displayName: "down"
         }
         standardTile("myposition", "device.position", inactiveLabel: false, decoration: "flat") {
-            state "default", action:"myposition", label: "myposition", displayName: "myposition"
+            state "default", action:"stop", label: "myposition", displayName: "myposition"
         }
         standardTile("stop", "device.position", inactiveLabel: false, decoration: "flat") {
             state "default", action:"stop", label: "stop", displayName: "stop"
@@ -42,8 +42,8 @@ metadata {
 			state "off", label: '${name}', action: "switch.on", icon: "st.switches.switch.off", backgroundColor: "#ffffff"
 		}
            
-        main "down"
-        details(["up","down","myposition","stop","switch"])
+        main "switch"
+        details(["switch", "up","down","myposition","stop"])
     }
 }
 
