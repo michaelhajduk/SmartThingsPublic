@@ -127,7 +127,7 @@ def setLevel(level) {
 }
 
 def russ(val){
-    def v = math.round( val / 2 )
+    def v = Math.round( val / 2 )
 	def uri = "/rus/EVENT_C[1].Z["+zone+"]!KeyPress_Volume_"+v
     postAction(uri)
 }
@@ -135,6 +135,8 @@ def russ(val){
 // ------------------------------------------------------------------
 
 private postAction(uri){
+	log.debug("SENDING URI: " +uri)
+
     setDeviceNetworkId(ip,port)
 
     def userpass = encodeCredentials(username, password)
